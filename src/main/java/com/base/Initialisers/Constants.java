@@ -10,12 +10,8 @@ public class Constants {
 	public static final String browser = "Chrome";
 	
 	//Application Url
-	//public static final String application_URL1 = "https://testpoint.vansah.net/";
-	//public static final String application_URL = "http://toolsqa.com/automation-practice-form/";
-	
-	public static final String application_URL2 = "http://www.way2automation.com/demo.html";
-	String userName = "test";
-	String Password = "test";
+	public static final String urlArma = "https://store.fashionunited.com/nl/nl/locators/arma";
+	public static final String urlNono = "https://store.fashionunited.com/nl/nl/locators/nono";
 	
 	// BUILD GENERATOR
 	static Calendar c = Calendar.getInstance();

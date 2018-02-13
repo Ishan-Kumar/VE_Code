@@ -6,7 +6,7 @@
  *  All the test cases should extend/call function of this class for driver.
  * */
 
-package com.framework.base;
+package com.base.Utility;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

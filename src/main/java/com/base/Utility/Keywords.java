@@ -2,7 +2,7 @@
  * This class will contains one function per keyword. Every function should 
  * have proper comments explaining what that function do.
  */
-package com.framework.base;
+package com.base.Utility;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
