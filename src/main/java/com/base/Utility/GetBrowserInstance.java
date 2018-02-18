@@ -14,9 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
 
 import com.base.Initialisers.Constants;
 
@@ -86,7 +84,8 @@ public class GetBrowserInstance
 	
 	public WebDriver initIEDriver()
 	{
-		System.setProperty("webdriver.ie.driver", "Lib\\IEDriverServer.exe");
+		driverExe_Path = System.getProperty("user.dir") + "//drivers//For_Windows//IEDriverServer.exe";
+		System.setProperty("webdriver.ie.driver", driverExe_Path);		
 		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 		capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
 		capabilities.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING,true);
@@ -94,18 +93,15 @@ public class GetBrowserInstance
 		//driver.manage().window().maximize();
 		return driver;
 	}
-	
 
 	/*
 	 * This function will create the Edge browser instance 
 	 * and return the driver.
-	 * Please Note: This will oncly work with windows10 Environment.
+	 * Please Note: This will only work with windows10 Environment.
 	 * */
 	public WebDriver initEdgeDriver(){
-
-
-		//System.setProperty("webdriver.edge.driver", "Lib\\MicrosoftWebDriver.exe");
-		System.setProperty("webdriver.edge.driver", "Lib\\MicrosoftWebDriver.exe");
+		driverExe_Path = System.getProperty("user.dir") + "//drivers//For_Windows//MicrosoftWebDriver.exe";
+		System.setProperty("webdriver.edge.driver", driverExe_Path);
 		DesiredCapabilities capabilities = DesiredCapabilities.edge();
 		driver = new EdgeDriver(capabilities);
 		//driver = new EdgeDriver();
@@ -118,7 +114,8 @@ public class GetBrowserInstance
 	 * */
 
 	public WebDriver initFirefoxDriver(){
-		System.setProperty("webdriver.gecko.driver", "Lib\\geckodriver.exe");
+		driverExe_Path = System.getProperty("user.dir") + "//drivers//For_Windows//geckodriver.exe";
+		System.setProperty("webdriver.gecko.driver", driverExe_Path);
 		//FirefoxProfile profile=new FirefoxProfile();
 		//profile.setAcceptUntrustedCertificates(true);
 		//DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -128,19 +125,4 @@ public class GetBrowserInstance
 		return driver;
 	}
 
-
-
-	/*
-	 * Close and quite the browser once everything is done
-	 * */
-	//@AfterClass
-	public void tearDown()
-	{
-		if(driver!=null)
-		{	
-			//driver.close();
-			driver.quit();
-			//driver = null;
-		}
-	}
 }

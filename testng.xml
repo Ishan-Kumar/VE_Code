@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel='classes' thread-count="5">
+	<test name="Assesment1">
+		<classes>
+			<class name="com.Assesment1.TestScenarios.Scenario1_OpenFilter" />
+			<class name="com.Assesment1.TestScenarios.Scenario2_VerifyTabFunction" />
+			<class name="com.Assesment1.TestScenarios.Scenario3_VerifyFilters" />
+			<class name="com.Assesment1.TestScenarios.Scenario4_VerifyMoreProduct" />
+			<class name="com.Assesment1.TestScenarios.Scenario5_VerifyProductDetails" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

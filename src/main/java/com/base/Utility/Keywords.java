@@ -4,8 +4,11 @@
  */
 package com.base.Utility;
 
+import java.util.List;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -120,7 +123,7 @@ public class Keywords
 		alert.accept();
 
 	}
-	
+
 	/* This function should be used to check if the element 
 	 * is displayed on the Page
 	 * @driver = driver object to perform selenium operations
@@ -131,11 +134,11 @@ public class Keywords
 		WebElement element = findElementWait(driver, elementIdentifier, elementValue);
 		if (element.isDisplayed()) {
 			return true;
-			}else{
-		return false;
+		}else{
+			return false;
 		}
 	}
-	
+
 	/* This function should be used to retrieve text from element
 	 * @driver = driver object to perform selenium operations
 	 * @elementIdentifier: Type of element we require to wait
@@ -148,6 +151,33 @@ public class Keywords
 	}
 
 
+	public String getElementAttribute(WebDriver driver,String elementIdentifier,String elementValue,
+			String attribute){
+		WebElement element = findElementWait(driver, elementIdentifier, elementValue);
+		return element.getAttribute(attribute);
+	}
+
+	public String getCurrentUrl(WebDriver driver)
+	{
+		return driver.getCurrentUrl();
+	}
+
+	public List<WebElement> fetchAllElements(WebDriver driver, String elementValue)
+	{
+		return driver.findElements(By.xpath(elementValue));
+	}
+
+	public  void scrollPage(WebDriver driver) {
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		//jse.executeScript("window.scrollBy(0,2500)", "");
+		jse.executeScript("windows.scrollTo(0, document.body.scrollHeight)", "");
+	}
+
+	public  void scrollPageToElement(WebDriver driver,String elementIdentifier, String elementValue) {
+		WebElement element = findElementWait(driver, elementIdentifier, elementValue);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].scrollIntoView(true)", element);
+	}
 
 
 }

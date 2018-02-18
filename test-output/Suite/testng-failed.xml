@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test name="Assesment1(failed)" parallel="classes">
+    <classes>
+      <class name="com.Assesment1.TestScenarios.Scenario5_VerifyProductDetails">
+        <methods>
+          <include name="getBrowser"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.Assesment1.TestScenarios.Scenario5_VerifyProductDetails -->
+      <class name="com.Assesment1.TestScenarios.Scenario4_VerifyMoreProduct">
+        <methods>
+          <include name="getBrowser"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.Assesment1.TestScenarios.Scenario4_VerifyMoreProduct -->
+      <class name="com.Assesment1.TestScenarios.Scenario2_VerifyTabFunction">
+        <methods>
+          <include name="getBrowser"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.Assesment1.TestScenarios.Scenario2_VerifyTabFunction -->
+      <class name="com.Assesment1.TestScenarios.Scenario3_VerifyFilters">
+        <methods>
+          <include name="getBrowser"/>
+          <include name="tearDown"/>
+          <include name="Scenario3"/>
+        </methods>
+      </class> <!-- com.Assesment1.TestScenarios.Scenario3_VerifyFilters -->
+      <class name="com.Assesment1.TestScenarios.Scenario1_OpenFilter">
+        <methods>
+          <include name="getBrowser"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.Assesment1.TestScenarios.Scenario1_OpenFilter -->
+    </classes>
+  </test> <!-- Assesment1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
