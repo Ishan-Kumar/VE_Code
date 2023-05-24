@@ -1,6 +1,5 @@
 package com.Assesment1.TestScenarios;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
